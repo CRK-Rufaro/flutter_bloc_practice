@@ -30,8 +30,7 @@ class GroceryData {
     {
       'id': 1004,
       'name': 'Apples',
-      'description':
-          'Crisp and juicy apples, sourced from the Himalayan mountains, rich in antioxidants and fiber',
+      'description': 'Crisp and juicy apples, rich in antioxidants and fiber',
       'price': 0.99,
       'imageUrl':
           'https://www.eatingwell.com/thmb/1XsyDLulOUGr61MOhz7_CXCdhnU=/750x0/filters:no_upscale():max_bytes(150000):strip_icc():format(webp)/fresh-apples-41deb698ccc4481fbe7eee1bac72795f.jpg'
@@ -40,7 +39,7 @@ class GroceryData {
       'id': 1005,
       'name': 'Carrots',
       'description':
-          'Sweet and crunchy carrots, grown in organic soil, high in vitamin A and beta-carotene',
+          'Sweet and crunchy carrots, high in vitamin A and beta-carotene',
       'price': 1.29,
       'imageUrl':
           'https://i0.wp.com/grospace.co.za/wp-content/uploads/2021/03/GroSpace-Carrots.jpg?fit=684%2C513&ssl=1'
@@ -48,8 +47,7 @@ class GroceryData {
     {
       'id': 1006,
       'name': 'Chicken',
-      'description':
-          'Tender and lean chicken, raised on a hormone-free diet, low in fat and high in protein',
+      'description': 'Tender and lean chicken, low in fat and high in protein',
       'price': 4.99,
       'imageUrl':
           'https://www.checkers.co.za/medias/10694905EA-checkers515Wx515H.webp?context=bWFzdGVyfGltYWdlc3wzNjA3MHxpbWFnZS93ZWJwfGltYWdlcy9oZGUvaGQ5LzkwMTM2OTg0NjE3MjYud2VicHw5OWY3MDVjYTgyYjEwYjQ0M2IxYWYwNTljMTM2OWIyMWFjZTVkNTFmOWI3MDVkYWIxNGFmNGQzNDUyNmEyOTQ1'
@@ -67,7 +65,7 @@ class GroceryData {
       'id': 1008,
       'name': 'Pasta',
       'description':
-          'Delicious and versatile pasta, made with durum wheat and semolina, perfect for any sauce',
+          'Delicious and versatile pasta, made with durum wheat, perfect for any sauce',
       'price': 1.49,
       'imageUrl':
           'https://eshop.checkersfs.co.za/content/images/thumbs/0001691_fattismonis-screws-pasta-bag-500g_540.jpeg'
@@ -75,8 +73,7 @@ class GroceryData {
     {
       'id': 1009,
       'name': 'Cheese',
-      'description':
-          'Smooth and tangy cheese, crafted with milk from local farms, great for melting or slicing',
+      'description': 'Smooth and tangy cheese, great for melting or slicing',
       'price': 3.49,
       'imageUrl':
           'https://spargs.co.za/cdn/shop/products/parmalat-cheese-cheddar-230gr_720x.png?v=1645537726'
@@ -85,7 +82,7 @@ class GroceryData {
       'id': 1010,
       'name': 'Butter',
       'description':
-          'Creamy and flavorful butter, churned with fresh cream and a touch of salt, ideal for baking or spreading',
+          'Creamy and flavorful butter, ideal for baking or spreading',
       'price': 2.99,
       'imageUrl':
           'https://eshop.checkersfs.co.za/content/images/thumbs/0006852_ladismith-unsalted-butter-brick-500g_540.jpeg'

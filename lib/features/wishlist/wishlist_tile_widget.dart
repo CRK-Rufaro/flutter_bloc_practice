@@ -2,19 +2,20 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc_practice/features/cart/bloc/cart_bloc.dart';
 import 'package:flutter_bloc_practice/features/home/bloc/home_bloc.dart';
 import 'package:flutter_bloc_practice/features/home/models/home_product_data_model.dart';
+import 'package:flutter_bloc_practice/features/wishlist/bloc/wishlist_bloc.dart';
 
-class CartTile extends StatefulWidget {
-  final CartBloc cartBloc;
+class WishlistTile extends StatefulWidget {
+  final WishlistBloc wishlistBloc;
 
   final ProductDataModel productDataModel;
-  const CartTile(
-      {super.key, required this.productDataModel, required this.cartBloc});
+  const WishlistTile(
+      {super.key, required this.productDataModel, required this.wishlistBloc});
 
   @override
-  State<CartTile> createState() => _CartTileState();
+  State<WishlistTile> createState() => _WishlistTileState();
 }
 
-class _CartTileState extends State<CartTile> {
+class _WishlistTileState extends State<WishlistTile> {
   @override
   Widget build(BuildContext context) {
     return Container(
@@ -156,8 +157,8 @@ class _CartTileState extends State<CartTile> {
                               constraints: const BoxConstraints(
                                   minWidth: 22, maxWidth: 22),
                               onPressed: () {
-                                widget.cartBloc.add(CartRemoveFromCartEvent(
-                                    removedCartItem: widget.productDataModel));
+                                // widget.cartBloc.add(CartRemoveFromCartEvent(
+                                //     removedCartItem: widget.productDataModel));
                               },
                               icon: Icon(Icons.remove_shopping_cart_outlined)),
                           SizedBox(
