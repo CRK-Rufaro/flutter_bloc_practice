@@ -16,7 +16,7 @@ class GroceryData {
           'Organic and free-range eggs, packed with protein and omega-3 fatty acids',
       'price': 2.49,
       'imageUrl':
-          'https://www.eatingwell.com/thmb/3whsmV5ssnN2PtLd5fy0UEU4pgY=/750x0/filters:no_upscale():max_bytes(150000):strip_icc():format(webp)/brown-eggs-vs-white-eggs-whats-the-difference-01-aca278858220460b82440e9391418fe4.jpg'
+          'https://eggtrayequipment.com/wp-content/uploads/2020/01/egg-cartons.jpg'
     },
     {
       'id': 1003,
@@ -33,7 +33,7 @@ class GroceryData {
       'description': 'Crisp and juicy apples, rich in antioxidants and fiber',
       'price': 0.99,
       'imageUrl':
-          'https://www.eatingwell.com/thmb/1XsyDLulOUGr61MOhz7_CXCdhnU=/750x0/filters:no_upscale():max_bytes(150000):strip_icc():format(webp)/fresh-apples-41deb698ccc4481fbe7eee1bac72795f.jpg'
+          'https://m.media-amazon.com/images/I/81MbS41+wFL._AC_UF894,1000_QL80_.jpg'
     },
     {
       'id': 1005,

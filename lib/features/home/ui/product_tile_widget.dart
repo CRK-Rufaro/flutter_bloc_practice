@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc_practice/data/grocery_data.dart';
+import 'package:flutter_bloc_practice/data/wishlist_items.dart';
 import 'package:flutter_bloc_practice/features/home/bloc/home_bloc.dart';
 import 'package:flutter_bloc_practice/features/home/models/home_product_data_model.dart';
 
@@ -6,7 +8,8 @@ class ProductTile extends StatefulWidget {
   final HomeBloc homeBloc;
 
   final ProductDataModel productDataModel;
-  const ProductTile(
+
+  ProductTile(
       {super.key, required this.productDataModel, required this.homeBloc});
 
   @override
@@ -16,6 +19,8 @@ class ProductTile extends StatefulWidget {
 class _ProductTileState extends State<ProductTile> {
   @override
   Widget build(BuildContext context) {
+    bool likedState = wishlistItems.contains(widget.productDataModel);
+    //print("This is the liked state: ${likedState}");
     return Container(
       margin: EdgeInsets.all(10),
       // padding: EdgeInsets.all(10),
@@ -92,7 +97,7 @@ class _ProductTileState extends State<ProductTile> {
                         SizedBox(
                           width: 10,
                         ),
-                        widget.productDataModel.likedState
+                        likedState
                             ? IconButton(
                                 color: Colors.red,
                                 padding: EdgeInsets.zero,
@@ -110,12 +115,18 @@ class _ProductTileState extends State<ProductTile> {
                                       HomeProductWishlistButtonClickEvent(
                                           clickedProduct:
                                               widget.productDataModel));
-                                  print(widget.productDataModel.likedState
-                                      .toString());
                                   setState(() {
-                                    widget.productDataModel.likedState =
-                                        !widget.productDataModel.likedState;
+                                    likedState = wishlistItems
+                                        .contains(widget.productDataModel);
+                                    // ideally this setstate call would not exist but because i am not calling from a data base i would've required to create an overcomplicated roundabout way of updating this widget
                                   });
+
+                                  // print(widget.productDataModel.likedState
+                                  //     .toString());
+                                  // setState(() {
+                                  //   widget.productDataModel.likedState =
+                                  //       !widget.productDataModel.likedState;
+                                  // });
                                   // homeBloc.add(HomeNavigateToWishlistButtonClickEvent());
                                 },
                                 icon: Icon(Icons.favorite_rounded),
@@ -136,12 +147,17 @@ class _ProductTileState extends State<ProductTile> {
                                       HomeProductWishlistButtonClickEvent(
                                           clickedProduct:
                                               widget.productDataModel));
-                                  print(widget.productDataModel.likedState
-                                      .toString());
                                   setState(() {
-                                    widget.productDataModel.likedState =
-                                        !widget.productDataModel.likedState;
+                                    likedState = wishlistItems
+                                        .contains(widget.productDataModel);
+                                    // ideally this setstate call would not exist but because i am not calling from a data base i would've required to create an overcomplicated roundabout way of updating this widget
                                   });
+                                  // print(widget.productDataModel.likedState
+                                  //     .toString());
+                                  // setState(() {
+                                  //   widget.productDataModel.likedState =
+                                  //       !widget.productDataModel.likedState;
+                                  // });
                                   // homeBloc.add(HomeNavigateToWishlistButtonClickEvent());
                                 },
                                 icon: Icon(Icons.favorite_border_outlined)),

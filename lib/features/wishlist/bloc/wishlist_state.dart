@@ -12,3 +12,11 @@ class WishlistLoadedSuccesfullyState extends WishlistState {
 
   WishlistLoadedSuccesfullyState({required this.wishlistItems});
 }
+
+class WishlistPageCartButtonClickedState extends WishlistActionState {
+  final bool alreadyInCart;
+
+  WishlistPageCartButtonClickedState({required this.alreadyInCart});
+}
+
+class RemovedFromWishlistState extends WishlistActionState {}

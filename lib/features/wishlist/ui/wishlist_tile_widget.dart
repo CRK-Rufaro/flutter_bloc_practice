@@ -94,61 +94,23 @@ class _WishlistTileState extends State<WishlistTile> {
                           SizedBox(
                             width: 10,
                           ),
-                          widget.productDataModel.likedState
-                              ? IconButton(
-                                  color: Colors.red,
-                                  padding: EdgeInsets.zero,
-                                  iconSize: 28,
-                                  constraints: const BoxConstraints(
-                                      minWidth: 22, maxWidth: 22),
-                                  hoverColor: Colors.redAccent,
-                                  //focusColor: Colors.redAccent.withOpacity(1),
-                                  highlightColor:
-                                      Colors.redAccent.withOpacity(0.3),
-                                  splashColor:
-                                      Colors.redAccent.withOpacity(0.3),
-                                  //splashColor: Colors.redAccent,
-                                  onPressed: () {
-                                    // widget.cartBloc.add(
-                                    //     HomeProductWishlistButtonClickEvent(
-                                    //         clickedProduct: widget.productDataModel));
-                                    // print(widget.productDataModel.likedState
-                                    //     .toString());
-                                    // setState(() {
-                                    //   widget.productDataModel.likedState =
-                                    //       !widget.productDataModel.likedState;
-                                    // });
-                                    // homeBloc.add(HomeNavigateToWishlistButtonClickEvent());
-                                  },
-                                  icon: Icon(Icons.favorite_rounded),
-                                )
-                              : IconButton(
-                                  color: Colors.white,
-                                  padding: EdgeInsets.zero,
-                                  iconSize: 28,
-                                  constraints: const BoxConstraints(
-                                      minWidth: 22, maxWidth: 22),
-                                  hoverColor: Colors.redAccent,
-                                  splashColor:
-                                      Colors.redAccent.withOpacity(0.3),
-                                  //focusColor: Colors.redAccent.withOpacity(0.3),
-                                  highlightColor:
-                                      Colors.redAccent.withOpacity(0.3),
-                                  onPressed: () {
-                                    // widget.homeBloc.add(
-                                    //     HomeProductWishlistButtonClickEvent(
-                                    //         clickedProduct: widget.productDataModel));
-                                    // print(widget.productDataModel.likedState
-                                    //     .toString());
-                                    // setState(() {
-                                    //   widget.productDataModel.likedState =
-                                    //       !widget.productDataModel.likedState;
-                                    // });
-                                    // homeBloc.add(HomeNavigateToWishlistButtonClickEvent());
-                                  },
-                                  icon: Icon(Icons.favorite_border_outlined)),
+                          IconButton(
+                              color: Colors.white,
+                              padding: EdgeInsets.zero,
+                              iconSize: 28,
+                              constraints: const BoxConstraints(
+                                  minWidth: 22, maxWidth: 22),
+                              onPressed: () {
+                                widget.wishlistBloc.add(
+                                    WishlistPageAddToCartEvent(
+                                        clickedProduct:
+                                            widget.productDataModel));
+                                // widget.cartBloc.add(CartRemoveFromCartEvent(
+                                //     removedCartItem: widget.productDataModel));
+                              },
+                              icon: Icon(Icons.add_shopping_cart_rounded)),
                           SizedBox(
-                            width: 15,
+                            width: 10,
                           ),
                           IconButton(
                               color: Colors.white,
@@ -157,10 +119,13 @@ class _WishlistTileState extends State<WishlistTile> {
                               constraints: const BoxConstraints(
                                   minWidth: 22, maxWidth: 22),
                               onPressed: () {
+                                widget.wishlistBloc.add(RemoveFromWishlistEvent(
+                                    removedWishlistItem:
+                                        widget.productDataModel));
                                 // widget.cartBloc.add(CartRemoveFromCartEvent(
                                 //     removedCartItem: widget.productDataModel));
                               },
-                              icon: Icon(Icons.remove_shopping_cart_outlined)),
+                              icon: Icon(Icons.remove_circle_outline)),
                           SizedBox(
                             width: 10,
                           ),

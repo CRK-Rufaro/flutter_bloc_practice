@@ -23,6 +23,7 @@ class HomeBloc extends Bloc<HomeEvent, HomeState> {
     on<HomeProductCartButtonClickEvent>(homeProductCartButtonClickEvent);
     on<HomeProductWishlistButtonClickEvent>(
         homeProductWishlistButtonClickEvent);
+    on<HomePageReloadEvent>(homePageReloadEvent);
   }
 
   //Event Handlers
@@ -46,27 +47,56 @@ class HomeBloc extends Bloc<HomeEvent, HomeState> {
 
   FutureOr<void> homeNavigateToCartButtonClickEvent(
       HomeNavigateToCartButtonClickEvent event, Emitter<HomeState> emit) {
-    print("Navigate to Cart Clicked");
+    //print("Navigate to Cart Clicked");
     emit(HomeNavigateToCartPageActionState());
   }
 
   FutureOr<void> homeNavigateToWishlistButtonClickEvent(
       HomeNavigateToWishlistButtonClickEvent event, Emitter<HomeState> emit) {
-    print("Navigate to Wishlist Clicked");
+    //print("Navigate to Wishlist Clicked");
     emit(HomeNavigateToWishlistPageActionState());
   }
 
   FutureOr<void> homeProductCartButtonClickEvent(
       HomeProductCartButtonClickEvent event, Emitter<HomeState> emit) {
-    print("Cart Button Clicked");
-    cartItems.add(event.clickedProduct);
-    emit(HomeProductAddedtoCartActionState());
+    //print("Cart Button Clicked");
+
+    void addingToCart() {
+      //print("Item added to cart");
+      cartItems.add(event.clickedProduct);
+      emit(HomeProductAddedtoCartActionState(alreadyInCart: false));
+    }
+
+    void alreadyInCart() {
+      //print("Item already in cart");
+      emit(HomeProductAddedtoCartActionState(alreadyInCart: true));
+    }
+
+    !(cartItems.contains(event.clickedProduct))
+        ? addingToCart()
+        : alreadyInCart();
+    //emit(HomeLoadedSuccessfullyState(products: event.));
   }
 
   FutureOr<void> homeProductWishlistButtonClickEvent(
       HomeProductWishlistButtonClickEvent event, Emitter<HomeState> emit) {
-    print("Wishlist Button Clicked");
-    wishlistItems.add(event.clickedProduct);
-    emit(HomeProductAddedtoWishlistActionState());
+    //print("Wishlist Button Clicked");
+
+    void addingToWishlist() {
+      wishlistItems.add(event.clickedProduct);
+      emit(HomeProductAddedtoWishlistActionState(alreadyInWishlist: false));
+    }
+
+    void removingFromWishlist() {
+      wishlistItems.remove(event.clickedProduct);
+      emit(HomeProductAddedtoWishlistActionState(alreadyInWishlist: true));
+    }
+
+    !wishlistItems.contains(event.clickedProduct)
+        ? addingToWishlist()
+        : removingFromWishlist();
   }
+
+  FutureOr<void> homePageReloadEvent(
+      HomePageReloadEvent event, Emitter<HomeState> emit) {}
 }

@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc_practice/data/wishlist_items.dart';
 import 'package:flutter_bloc_practice/features/cart/bloc/cart_bloc.dart';
 import 'package:flutter_bloc_practice/features/home/bloc/home_bloc.dart';
 import 'package:flutter_bloc_practice/features/home/models/home_product_data_model.dart';
@@ -17,6 +18,7 @@ class CartTile extends StatefulWidget {
 class _CartTileState extends State<CartTile> {
   @override
   Widget build(BuildContext context) {
+    bool likedState = wishlistItems.contains(widget.productDataModel);
     return Container(
       margin: EdgeInsets.all(10),
       padding: EdgeInsets.only(top: 5),
@@ -93,7 +95,7 @@ class _CartTileState extends State<CartTile> {
                           SizedBox(
                             width: 10,
                           ),
-                          widget.productDataModel.likedState
+                          likedState
                               ? IconButton(
                                   color: Colors.red,
                                   padding: EdgeInsets.zero,
@@ -108,15 +110,18 @@ class _CartTileState extends State<CartTile> {
                                       Colors.redAccent.withOpacity(0.3),
                                   //splashColor: Colors.redAccent,
                                   onPressed: () {
+                                    widget.cartBloc.add(
+                                        CartPageWishListButtonClickEvent(
+                                            clickedProduct:
+                                                widget.productDataModel));
                                     // widget.cartBloc.add(
                                     //     HomeProductWishlistButtonClickEvent(
                                     //         clickedProduct: widget.productDataModel));
                                     // print(widget.productDataModel.likedState
                                     //     .toString());
-                                    // setState(() {
-                                    //   widget.productDataModel.likedState =
-                                    //       !widget.productDataModel.likedState;
-                                    // });
+                                    setState(() {
+                                      likedState = !likedState;
+                                    });
                                     // homeBloc.add(HomeNavigateToWishlistButtonClickEvent());
                                   },
                                   icon: Icon(Icons.favorite_rounded),
@@ -134,6 +139,13 @@ class _CartTileState extends State<CartTile> {
                                   highlightColor:
                                       Colors.redAccent.withOpacity(0.3),
                                   onPressed: () {
+                                    widget.cartBloc.add(
+                                        CartPageWishListButtonClickEvent(
+                                            clickedProduct:
+                                                widget.productDataModel));
+                                    setState(() {
+                                      likedState = !likedState;
+                                    });
                                     // widget.homeBloc.add(
                                     //     HomeProductWishlistButtonClickEvent(
                                     //         clickedProduct: widget.productDataModel));

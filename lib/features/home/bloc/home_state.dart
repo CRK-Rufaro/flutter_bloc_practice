@@ -21,6 +21,14 @@ class HomeNavigateToWishlistPageActionState extends HomeActionState {}
 
 class HomeNavigateToCartPageActionState extends HomeActionState {}
 
-class HomeProductAddedtoWishlistActionState extends HomeActionState {}
+class HomeProductAddedtoWishlistActionState extends HomeActionState {
+  final bool alreadyInWishlist;
 
-class HomeProductAddedtoCartActionState extends HomeActionState {}
+  HomeProductAddedtoWishlistActionState({required this.alreadyInWishlist});
+}
+
+class HomeProductAddedtoCartActionState extends HomeActionState {
+  final bool alreadyInCart;
+
+  HomeProductAddedtoCartActionState({required this.alreadyInCart});
+}

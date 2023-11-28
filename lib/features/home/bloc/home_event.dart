@@ -20,3 +20,5 @@ class HomeProductCartButtonClickEvent extends HomeEvent {
 class HomeNavigateToCartButtonClickEvent extends HomeEvent {}
 
 class HomeNavigateToWishlistButtonClickEvent extends HomeEvent {}
+
+class HomePageReloadEvent extends HomeEvent {}

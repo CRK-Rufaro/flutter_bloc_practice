@@ -12,3 +12,11 @@ class CartSuccessState extends CartState {
 
   CartSuccessState({required this.cartItems});
 }
+
+class CartProductRemovedFromCartState extends CartActionState {}
+
+class CartWishlistButtonClick extends CartActionState {
+  final bool alreadyInWishlist;
+
+  CartWishlistButtonClick({required this.alreadyInWishlist});
+}
