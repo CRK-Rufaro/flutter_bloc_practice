@@ -1,4 +1,4 @@
-# flutter_bloc_practice
+# flutter_bloc_practice (Grocery App v1)
 
 A new Flutter project.
 
