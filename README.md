@@ -1,16 +1,3 @@
 # flutter_bloc_practice (Grocery App v1)
 
-A new Flutter project.
-
-## Getting Started
-
-This project is a starting point for a Flutter application.
-
-A few resources to get you started if this is your first Flutter project:
-
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
-
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+I developed this Flutter BLoC practice project to address a gap in my knowledge of state management technologies. Before this, I was only accustomed to using Provider and GetX in a professional environment. The goal was to facilitate my transition into workflows that leverage Flutter BLoC for state management.
